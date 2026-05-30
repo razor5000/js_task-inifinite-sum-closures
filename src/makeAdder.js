@@ -3,10 +3,10 @@
 /***
  * @return {function}
  */
-function makeInfinityAdder() {
+function makeAdder() {
   let countBank = 0;
 
-  return function makeAdder(...args) {
+  return function digit(...args) {
     if (args.length === 0) {
       const temp = countBank;
 
@@ -17,8 +17,8 @@ function makeInfinityAdder() {
 
     countBank += args[0];
 
-    return makeAdder;
+    return digit;
   };
 }
 
-module.exports = makeInfinityAdder;
+module.exports = makeAdder;
