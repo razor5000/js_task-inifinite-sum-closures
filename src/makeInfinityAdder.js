@@ -6,7 +6,7 @@
 function makeInfinityAdder() {
   let countBank = 0;
 
-  return function add(...args) {
+  return function makeAdder(...args) {
     if (args.length === 0) {
       const temp = countBank;
 
@@ -17,7 +17,7 @@ function makeInfinityAdder() {
 
     countBank += args[0];
 
-    return add;
+    return makeAdder;
   };
 }
 
